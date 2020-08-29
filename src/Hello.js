@@ -1,10 +1,18 @@
-// 리액트 컴포넌트
-// 컴포넌트는 일종의 UI 조각
-import React from 'react'; // 리액트를 불러와서 사용하겠다는 의미
+// props
 
-function Hello() { /* 컴포넌트는 클래스와 함수 2가지 형태로 만들 수 있는데 여기서는 함수로 만듦
-                      컴포넌트 이름의 앞글자는 대문자로 해줘야함 */
-    return <div>안녕하세요!</div>;
+import React from 'react'; 
+
+function Hello(props) { /* 값을 받아와서 사용하고 싶으면 함수에 파라미터에 props를 넣어주면 된다.
+                            props에는 우리가 넣어준 값들이 객체 형태로 들어가 있다. */
+
+    return <div style={{ // 자바스크립트 값이니깐 중괄호를 두번 감싼다.
+        color: props.color
+    }}>안녕하세요!{props.name}</div>; /* props의 객체 형태로 들어간 값을 JSX내부에서 렌더링 하려면 저렇게
+                                                {} 감싸준뒤 하면 된다. */ 
 }
 
-export default Hello; // Hello라는 컴포넌트를 내보내겠다는 의미
+Hello.defaultProps = { // Props 값을 모르고 안써줬을 때 기본값 지정
+    name: '이름없음'
+};
+
+export default Hello; 
