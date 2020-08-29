@@ -19,7 +19,7 @@ export default Hello;
 
 import React from 'react'; 
 
-function Hello(color, name) { // 비구조화 할당으로 작성 해줄 수도 있다.
+function Hello({color, name}) { // 비구조화 할당으로 작성 해줄 수도 있다.
 
     return <div style={{color}}>안녕하세요!{name}</div>; 
 
@@ -48,7 +48,7 @@ export default App;
 
 // props children
 
-// props children : 컴포넌트 안에 있는 어떤 값을 조회할 때 사용
+// props children : 컴포넌트 태그 사이에 있는 다른 컴포넌트를 화면에 보이도록 할 때 사용
 
 import React from 'react';
 
