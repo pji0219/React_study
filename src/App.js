@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import ClassType from './components/ClassType';
+import ClassCounter from './components/ClassCounter';
 
-class Hello extends Component {
+class App extends Component {
   render() {
     return (
       <div>
-        <ClassType name="반갑습니다!" color="blue" isSpecial="ture"/>
+        <ClassCounter/>
       </div>
     )
   }
 }
 
-export default Hello;
+export default App;
