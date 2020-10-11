@@ -6,7 +6,6 @@ class App extends Component {
     return (
       <div>
         <ClassCounter/>
-        <ClassCounter/>
       </div>
     )
   }
