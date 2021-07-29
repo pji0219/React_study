@@ -1,9 +1,6 @@
 import React from 'react';
 
-function CreateUser({ inputs, onChange, onCreate }) {
-    const { username, email } = inputs
-
-    console.log('생성');
+function CreateUser({ username, email, onChange, onCreate }) {
 
     return (
         <div>

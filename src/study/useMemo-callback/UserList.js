@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 
-const User = React.memo(function User({ onRemove, onToggle, user }) {
-    const { username, email, id, active } = user;
-
-    console.log('유저');
+const User = React.memo(function User({ username, email, id, onRemove, active, onToggle, user }) {
 
     useEffect(() => {
         // 뎁스 배열에 값을 설정하면 그 값이 업데이트 될 때 마다
@@ -54,7 +51,11 @@ function UserList({ users, onRemove, onToggle }) {
             {users.map(user => (
                 <User
                     key={user.id}
+                    username={user.username}
+                    email={user.email}
                     onRemove={onRemove}
+                    id={user.id}
+                    active={user.active}
                     onToggle={onToggle}
                     user={user}
                 />
@@ -63,7 +64,4 @@ function UserList({ users, onRemove, onToggle }) {
     );
 }
 
-// 다른 props들이 안 고정적이라는 확신이 있을 때는 이렇게 특정 props가 
-//이전prop와 현 props가 같은지 여부(props가 바뀌었는지)에 따라 리렌더링 할지 말지 결정하는 
-//propsAreEqual함수를 넣을 수 있다.
-export default React.memo(UserList, (prevProps, nextProps) => prevProps.users === nextProps.users);
+export default React.memo(UserList);
